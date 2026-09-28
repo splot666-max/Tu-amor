@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para ti, Jolly ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden;
+    background: radial-gradient(circle at center, #351522, #120910 55%, #030304);
+    color: white;
+    font-family: Georgia, serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor {
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    z-index: 2;
+    animation: aparecer 2s ease;
+}
+
+.corazones {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+}
+
+.corazon {
+    position: absolute;
+    bottom: -50px;
+    font-size: 22px;
+    animation: subir 7s linear infinite;
+    opacity: 0;
+}
+
+.corazon:nth-child(1) { left: 10%; animation-delay: 0s; }
+.corazon:nth-child(2) { left: 25%; animation-delay: 2s; }
+.corazon:nth-child(3) { left: 48%; animation-delay: 4s; }
+.corazon:nth-child(4) { left: 70%; animation-delay: 1s; }
+.corazon:nth-child(5) { left: 88%; animation-delay: 3s; }
+
+h2 {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #aaa0a8;
+}
+
+h1 {
+    font-size: clamp(42px, 11vw, 75px);
+    margin: 15px 0;
+    background: linear-gradient(90deg, white, #ffb8ca, white);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.intro {
+    font-family: Arial, sans-serif;
+    color: #d0c6cc;
+    line-height: 1.7;
+    font-size: 17px;
+}
+
+button {
+    margin-top: 30px;
+    padding: 14px 25px;
+    border-radius: 30px;
+    border: 1px solid #ffffff40;
+    background: #ffffff12;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ffffff25;
+}
+
+.carta {
+    margin-top: 25px;
+    padding: 25px;
+    border-radius: 20px;
+    background: #ffffff0d;
+    border: 1px solid #ffffff18;
+    font-family: Arial, sans-serif;
+    line-height: 1.8;
+    font-size: 16px;
+    animation: carta 1s ease;
+}
+
+.oculto {
+    display: none;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes carta {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes subir {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="corazones">
+    <div class="corazon">❤️</div>
+    <div class="corazon">💙</div>
+    <div class="corazon">❤️</div>
+    <div class="corazon">💙</div>
+    <div class="corazon">❤️</div>
+</div>
+
+<div class="contenedor">
+
+    <div style="font-size:35px;">💙❤️</div>
+
+    <h2>Para alguien muy especial</h2>
+
+    <h1>Princess Jolly</h1>
+
+    <p class="intro">
+        Hay cosas que son difíciles de explicar con palabras...
+        pero hay una que sí sé.
+    </p>
+
+    <button id="boton">
+        Tengo algo que decirte ✨
+    </button>
+
+    <div id="carta" class="carta oculto">
+
+        Te amo. ❤️
+
+        <br><br>
+
+        hago esto porque te amo tanto jolly 🖤 ❤️ 
+
+        <br><br>
+
+        Solo quería dejar en algún lugar estas palabras
+        que a veces me cuesta decir
+
+        <br><br>
+
+        Gracias por existir en mi vida. 🖤❤️
+
+    </div>
+
+</div>
+
+<script>
+const boton = document.getElementById("boton");
+const carta = document.getElementById("carta");
+
+boton.addEventListener("click", function() {
+    carta.classList.remove("oculto");
+    boton.style.display = "none";
+});
+</script>
+
+</body>
+</html>
